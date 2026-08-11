@@ -15,6 +15,9 @@ export function Tabs(props) {
 
         return (
           <button
+            onClick={() => {
+              setSelectedTab(tab);
+            }}
             key={tabIndex}
             className={
               "tab-button " + (tab === selectedTab ? " tab-selected" : "")
