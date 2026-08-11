@@ -19,6 +19,7 @@ export function TodoInput(props) {
             return;
           }
           handleAddTodo(inputValue);
+          setInputValue("");
         }}
       >
         <i className="fa-solid fa-plus"></i>
