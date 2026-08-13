@@ -4,7 +4,7 @@ export function Tabs(props) {
   const tabs = ["All", "Open", "Completed"];
 
   return (
-    <nav className="tab-container">
+    <nav className="tabs tabs-border overflow-x-auto">
       {tabs.map((tab, tabIndex) => {
         const numOfTasks =
           tab === "All"
@@ -19,17 +19,15 @@ export function Tabs(props) {
               setSelectedTab(tab);
             }}
             key={tabIndex}
-            className={
-              "tab-button " + (tab === selectedTab ? " tab-selected" : "")
-            }
+            className={"tab " + (tab === selectedTab ? "tab-active" : "")}
           >
             <h4>
-              {tab} <span>({numOfTasks})</span>
+              {tab}{" "}
+              <span className="opacity-40 font-normal">({numOfTasks})</span>
             </h4>
           </button>
         );
       })}
-      <hr />
     </nav>
   );
 }
