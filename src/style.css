@@ -3,6 +3,7 @@
 
 @theme {
   --font-sans: "Courier Prime", monospace;
+  --radius-field: 0.75rem;
 }
 
 #root {

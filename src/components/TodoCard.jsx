@@ -10,7 +10,7 @@ export function TodoCard(props) {
             handleCompleteTodo(todoIndex);
           }}
           disabled={todo.complete}
-          className="btn btn-success btn-sm"
+          className="btn btn-outline btn-success btn-sm"
         >
           <h6 className="text-sm font-medium">Done</h6>
         </button>
@@ -18,7 +18,7 @@ export function TodoCard(props) {
           onClick={() => {
             handleDeleteTodo(todoIndex);
           }}
-          className="btn btn-error btn-sm"
+          className="btn btn-outline btn-error btn-sm"
         >
           <h6 className="text-sm font-medium">Delete</h6>
         </button>
