@@ -11,11 +11,7 @@ export function TodoList(props) {
         : todos.filter((val) => !val.complete);
 
   if (filterTodosList.length === 0) {
-    return (
-      <p className="text-center text-base-content/40 py-8">
-        No tasks here yet.
-      </p>
-    );
+    return <p className="text-base-content/40 py-8">No tasks yet.</p>;
   }
 
   return (

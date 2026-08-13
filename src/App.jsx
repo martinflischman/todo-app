@@ -60,6 +60,7 @@ function App() {
         setSelectedTab={setSelectedTab}
         todos={todos}
       />
+      <TodoInput handleAddTodo={handleAddTodo} />
       <TodoList
         handleCompleteTodo={handleCompleteTodo}
         handleDeleteTodo={handleDeleteTodo}
@@ -67,7 +68,6 @@ function App() {
         selectedTab={selectedTab}
         todos={todos}
       />
-      <TodoInput handleAddTodo={handleAddTodo} />
     </>
   );
 }
