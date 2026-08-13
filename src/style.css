@@ -112,18 +112,6 @@ hr {
   font-weight: 500;
 }
 
-.input-container {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.input-container input {
-  width: 100%;
-  flex: 1;
-  max-width: unset !important;
-}
-
 @keyframes widen {
   from {
     width: 20%;
