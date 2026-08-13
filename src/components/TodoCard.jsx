@@ -45,6 +45,13 @@ export function TodoCard(props) {
         <input
           value={editValue}
           onChange={(e) => setEditValue(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              handleSaveEdit();
+            } else if (e.key === "Escape") {
+              handleCancelEdit();
+            }
+          }}
           className="input input-sm w-full flex-1"
           autoFocus
         />
