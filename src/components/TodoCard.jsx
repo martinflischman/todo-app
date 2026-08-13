@@ -46,7 +46,7 @@ export function TodoCard(props) {
               className={`${iconBtn} hover:border-success hover:bg-success hover:text-success-content`}
               aria-label="Save"
             >
-              <i className="fa-solid fa-check"></i>
+              <i className="fa-solid fa-floppy-disk"></i>
             </button>
             <button
               onClick={handleCancelEdit}
