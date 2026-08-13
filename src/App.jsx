@@ -34,6 +34,13 @@ function App() {
     handleSaveData(newTodoList);
   }
 
+  function handleEditTodo(index, newValue) {
+    let newTodoList = [...todos];
+    newTodoList[index] = { ...newTodoList[index], input: newValue };
+    setTodos(newTodoList);
+    handleSaveData(newTodoList);
+  }
+
   function handleSaveData(currentTodos) {
     localStorage.setItem("todo-app", JSON.stringify({ todos: currentTodos }));
   }
@@ -57,6 +64,7 @@ function App() {
       <TodoList
         handleCompleteTodo={handleCompleteTodo}
         handleDeleteTodo={handleDeleteTodo}
+        handleEditTodo={handleEditTodo}
         selectedTab={selectedTab}
         todos={todos}
       />
