@@ -12,7 +12,7 @@ export function TodoCard(props) {
           disabled={todo.complete}
           className="btn btn-success btn-sm"
         >
-          <h6>Done</h6>
+          <h6 className="text-sm font-medium">Done</h6>
         </button>
         <button
           onClick={() => {
@@ -20,7 +20,7 @@ export function TodoCard(props) {
           }}
           className="btn btn-error btn-sm"
         >
-          <h6>Delete</h6>
+          <h6 className="text-sm font-medium">Delete</h6>
         </button>
       </div>
     </div>

@@ -21,7 +21,7 @@ export function Tabs(props) {
             key={tabIndex}
             className={"tab " + (tab === selectedTab ? "tab-active" : "")}
           >
-            <h4>
+            <h4 className="text-lg font-normal">
               {tab}{" "}
               <span className="opacity-40 font-normal">({numOfTasks})</span>
             </h4>
