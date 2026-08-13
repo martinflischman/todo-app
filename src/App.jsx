@@ -17,11 +17,10 @@ function App() {
   }
 
   function handleCompleteTodo(index) {
-    // update/edit/modify
     let newTodoList = [...todos];
-    let completedTodo = todos[index];
-    completedTodo["complete"] = true;
-    newTodoList[index] = completedTodo;
+    let toggledTodo = { ...newTodoList[index] };
+    toggledTodo.complete = !toggledTodo.complete;
+    newTodoList[index] = toggledTodo;
     setTodos(newTodoList);
     handleSaveData(newTodoList);
   }

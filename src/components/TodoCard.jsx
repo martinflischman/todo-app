@@ -35,7 +35,11 @@ export function TodoCard(props) {
           autoFocus
         />
       ) : (
-        <p className="font-medium">{todo.input}</p>
+        <p
+          className={`font-medium ${todo.complete ? "text-base-content/40" : ""}`}
+        >
+          {todo.input}
+        </p>
       )}
 
       <div className="flex gap-2">
@@ -59,20 +63,23 @@ export function TodoCard(props) {
         ) : (
           <>
             <button
+              onClick={() => handleCompleteTodo(todoIndex)}
+              className={
+                todo.complete
+                  ? "btn btn-success btn-sm btn-square"
+                  : `${iconBtn} hover:border-success hover:bg-success hover:text-success-content`
+              }
+              aria-label={todo.complete ? "Mark not done" : "Mark done"}
+            >
+              <i className="fa-solid fa-check"></i>
+            </button>
+            <button
               onClick={() => setIsEditing(true)}
               disabled={todo.complete}
               className={`${iconBtn} hover:border-info hover:bg-info hover:text-info-content`}
               aria-label="Edit"
             >
               <i className="fa-solid fa-pen"></i>
-            </button>
-            <button
-              onClick={() => handleCompleteTodo(todoIndex)}
-              disabled={todo.complete}
-              className={`${iconBtn} hover:border-success hover:bg-success hover:text-success-content`}
-              aria-label="Mark done"
-            >
-              <i className="fa-solid fa-check"></i>
             </button>
             <button
               onClick={() => handleDeleteTodo(todoIndex)}
