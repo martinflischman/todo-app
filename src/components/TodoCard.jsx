@@ -26,23 +26,37 @@ export function TodoCard(props) {
     "btn btn-outline btn-sm btn-square border-base-content/30 text-base-content/70";
 
   return (
-    <div className="card card-border bg-base-100 flex-col gap-2 p-4 sm:flex-row sm:items-center sm:justify-between">
+    <div className="card card-border bg-base-100 flex-row items-center gap-4 p-4">
+      {!isEditing && (
+        <button
+          onClick={() => handleCompleteTodo(todoIndex)}
+          className={
+            todo.complete
+              ? "btn btn-success btn-sm btn-square shrink-0"
+              : `${iconBtn} shrink-0 hover:border-success hover:bg-success hover:text-success-content`
+          }
+          aria-label={todo.complete ? "Mark not done" : "Mark done"}
+        >
+          <i className="fa-solid fa-check"></i>
+        </button>
+      )}
+
       {isEditing ? (
         <input
           value={editValue}
           onChange={(e) => setEditValue(e.target.value)}
-          className="input input-sm w-full sm:flex-1"
+          className="input input-sm w-full flex-1"
           autoFocus
         />
       ) : (
         <p
-          className={`font-medium ${todo.complete ? "text-base-content/40" : ""}`}
+          className={`flex-1 font-medium ${todo.complete ? "text-base-content/40" : ""}`}
         >
           {todo.input}
         </p>
       )}
 
-      <div className="flex gap-2">
+      <div className="flex shrink-0 gap-2">
         {isEditing ? (
           <>
             <button
@@ -62,17 +76,6 @@ export function TodoCard(props) {
           </>
         ) : (
           <>
-            <button
-              onClick={() => handleCompleteTodo(todoIndex)}
-              className={
-                todo.complete
-                  ? "btn btn-success btn-sm btn-square"
-                  : `${iconBtn} hover:border-success hover:bg-success hover:text-success-content`
-              }
-              aria-label={todo.complete ? "Mark not done" : "Mark done"}
-            >
-              <i className="fa-solid fa-check"></i>
-            </button>
             <button
               onClick={() => setIsEditing(true)}
               disabled={todo.complete}
